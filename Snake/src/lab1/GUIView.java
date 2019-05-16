@@ -2,6 +2,7 @@ package lab1;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -50,7 +51,8 @@ public class GUIView extends JPanel {
 		this.gameFactory = factory;
 
 		// Set the background on the GameView
-		this.gameView.setBackground(Color.white);
+                //Integrante 2: Change color from white to lightGray
+		this.gameView.setBackground(Color.lightGray);
 
 		// Set the layout on myself
 		setLayout(new BorderLayout());
@@ -63,7 +65,7 @@ public class GUIView extends JPanel {
 
 		// Create a new button on that panel and add a StartGameListener as
 		// listener on that button
-		this.startGameButton = new JButton("Start Game");
+		this.startGameButton = new JButton("Let's Play");
 		this.startGameButton.addActionListener(new StartGameListener());
 		this.guiPanel.add(this.startGameButton);
 
@@ -74,6 +76,9 @@ public class GUIView extends JPanel {
 		// Add both the new panel and the GameView to myself
 		add(this.gameView, BorderLayout.CENTER);
 		add(this.guiPanel, BorderLayout.SOUTH);
+                
+                //Integrante 2: Resizing screen to 15x15
+                setPreferredSize(new Dimension(15,15));
 	}
 
 	/**
